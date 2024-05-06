@@ -24,7 +24,7 @@ const EventItem = (props: EventItemProps) => {
   moment.locale("es");
 
   const { event } = props;
-  let { id, title, description, location } = event;
+  let { id, title, description, location, image } = event;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const EventItem = (props: EventItemProps) => {
         <CardMedia
           component="img"
           height="250"
-          image="https://placehold.co/600x400"
+          image={image}
           alt={title}
         />
         <CardContent>

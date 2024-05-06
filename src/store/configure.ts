@@ -26,6 +26,8 @@ import {
   deleteCategory,
 } from "src/reducers/category";
 
+import { attendees } from "src/reducers/attendees";
+
 const persistConfig = {
   key: "root",
   storage,
@@ -46,6 +48,7 @@ const rootReducer = combineReducers<any>({
   storeCategory,
   updateCategory,
   deleteCategory,
+  attendees,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

@@ -38,9 +38,12 @@ API.interceptors.response.use(
     const { config, response } = error;
 
     if (response && response.status === 401) {
-      await API.post('/refresh');
+      const { url } = config;
+      if (url !== "/refresh") {
+        await API.post('/refresh');
 
-      return axios.request(config);
+        return axios.request(config);
+      }
     }
 
     return Promise.reject(error);
