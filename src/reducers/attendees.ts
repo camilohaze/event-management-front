@@ -4,7 +4,7 @@ const initialState = {
   inserted: false,
 };
 
-export const auth = (state = initialState, action: any) => {
+export const attendees = (state = initialState, action: any) => {
   const { type, payload } = action;
 
   switch (type) {
